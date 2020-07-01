@@ -1,0 +1,10 @@
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\bin\Debug\Calc.exe.config
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\bin\Debug\Calc.exe
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\bin\Debug\Calc.pdb
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.csprojAssemblyReference.cache
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.Form1.resources
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.Properties.Resources.resources
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.csproj.GenerateResource.cache
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.csproj.CoreCompileInputs.cache
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.exe
+C:\Users\sk227\OneDrive\2020.06_calc\Calc\Calc\obj\Debug\Calc.pdb
