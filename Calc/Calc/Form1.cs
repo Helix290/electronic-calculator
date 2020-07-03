@@ -15,7 +15,7 @@ namespace Calc
     public partial class Form1 : Form
     {
         int input;
-        int point_mode = 0, point_count = 0, calc_count = 0, calc_log;
+        int point_mode = 0, point_count = 0, calc_count = 0, calc_log, reset = 0;
         String tmp_display = " ", main_display = "";
         double i, j = 0;
         public Form1()
@@ -86,62 +86,86 @@ namespace Calc
             label1.Text = Convert.ToString(i);
         }
 
+        private void allclear()
+        {
+            i = 0;
+            j = 0;
+            calc_count = 0;
+            calc_log = 0;
+            point_clear();
+            tmp_display = " ";
+            main_display = "";
+            reset = 0;
+            display(0);
+            subdisplay(tmp_display);
+        }
+
         private void button0_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 0;
             display(input);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 1;
             display(input);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 2;
             display(input);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 3;
             display(input);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 4;
             display(input);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 5;
             display(input);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 6;
             display(input);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 7;
             display(input);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 8;
             display(input);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (reset == 1) allclear();
             input = 9;
             display(input);
         }
@@ -150,6 +174,7 @@ namespace Calc
         {
             if (point_mode == 0)
             {
+                if (reset == 1) allclear();
                 point_mode = 1;
                 main_display = Convert.ToString(i);
                 main_display += ".";
@@ -163,6 +188,7 @@ namespace Calc
             subdisplay(tmp_display);
             calculation();
             point_clear();
+            reset = 1;
             label1.Text = Convert.ToString(j);
         }
 
@@ -174,6 +200,7 @@ namespace Calc
             calc_count += 1;
             calc_log = 1;
             point_clear();
+            reset = 0;
             label1.Text = Convert.ToString(j);
         }
 
@@ -185,6 +212,7 @@ namespace Calc
             calc_count += 1;
             calc_log = 2;
             point_clear();
+            reset = 0;
             label1.Text = Convert.ToString(j);
         }
 
@@ -196,6 +224,7 @@ namespace Calc
             calc_count += 1;
             calc_log = 3;
             point_clear();
+            reset = 0;
             label1.Text = Convert.ToString(j);
         }
 
@@ -207,6 +236,7 @@ namespace Calc
             calc_count += 1;
             calc_log = 4;
             point_clear();
+            reset = 0;
             label1.Text = Convert.ToString(j);
         }
 
@@ -243,15 +273,7 @@ namespace Calc
 
         private void button_allclear_Click(object sender, EventArgs e)
         {
-            i = 0;
-            j = 0;
-            calc_count = 0;
-            calc_log = 0;
-            point_clear();
-            tmp_display = " ";
-            main_display = "";
-            display(0);
-            subdisplay(tmp_display);
+            allclear();
         }
 
     }
