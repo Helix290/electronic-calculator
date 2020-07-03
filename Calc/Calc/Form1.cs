@@ -16,7 +16,7 @@ namespace Calc
     {
         int input;
         int point_mode = 0, point_count = 0, calc_count = 0, calc_log;
-        String tmp_display = " ";
+        String tmp_display = " ", main_display = "";
         double i, j = 0;
         public Form1()
         {
@@ -52,6 +52,7 @@ namespace Calc
             {
                 i *= 10;
                 i += a;
+                label1.Text = Convert.ToString(i);
             }
             else
             {
@@ -59,9 +60,11 @@ namespace Calc
                 point_count += 1;
                 b = a * Math.Pow(0.1, point_count);
                 i += b;
+
+                main_display += Convert.ToString(a);
+                label1.Text = main_display;
             }
-            
-            label1.Text = Convert.ToString(i);
+                          
         }
 
         private void point_clear()
@@ -145,7 +148,13 @@ namespace Calc
 
         private void button_point_Click(object sender, EventArgs e)
         {
-            if (point_mode == 0) point_mode = 1;
+            if (point_mode == 0)
+            {
+                point_mode = 1;
+                main_display = Convert.ToString(i);
+                main_display += ".";
+                label1.Text = main_display;
+            }
         }
 
         private void button_calc_Click(object sender, EventArgs e)
@@ -211,9 +220,15 @@ namespace Calc
                 tmp = (tmp / 10) - ((tmp % 10) / 10);
                 point_count -= 1;
                 i = tmp * Math.Pow(0.1, point_count);
+                if (point_count == 0) point_mode = 0;
             }
-            if (point_count == 0) point_mode = 0;
-            label1.Text = Convert.ToString(i);
+            if (point_count == 0) label1.Text = Convert.ToString(i);
+            else
+            {
+                int length = main_display.Length;
+                main_display = main_display.Remove(length - 1);
+                label1.Text = main_display;
+            }
         }
 
         
@@ -221,6 +236,7 @@ namespace Calc
         private void button_clear_Click(object sender, EventArgs e)
         {
             i = 0;
+            main_display = "";
             point_clear();
             display(0);
         }
@@ -233,6 +249,7 @@ namespace Calc
             calc_log = 0;
             point_clear();
             tmp_display = " ";
+            main_display = "";
             display(0);
             subdisplay(tmp_display);
         }
